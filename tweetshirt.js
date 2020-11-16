@@ -21,6 +21,19 @@ function previewHandler(){
             drawCircle(canvas, context);
         }
     }
+
+    // Added this instead of API call as book URL is out of date
+    var selectObjTweet = document.getElementById("tweets");
+    var indexTweet = selectObjTweet.selectedIndex;
+    var tweets = selectObjTweet[indexTweet].value;
+
+    if (tweets == "tweet1") {
+            context.font = "30px Arial";
+            context.strokeText("Funny Tweet Saying", 160, 110);
+        } else if (tweets == "tweet2") {
+            context.font = "30px Arial";
+            context.strokeText("Humorous Tweet No 23.", 150, 110);
+    }
 }
 
 function fillBackgroundColor(canvas, context) {
@@ -53,3 +66,7 @@ function drawCircle(canvas, context){
 function degreesToRadians (degrees){
     return (degrees * Math.PI)/180
 }
+
+
+
+
