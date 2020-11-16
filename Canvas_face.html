@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Triangle</title>
+<meta charset="utf-8">
+<script>
+window.onload = function() {
+	var canvas = document.getElementById("myCanvas");
+	var context = canvas.getContext("2d");
+
+	drawTriangle(canvas, context);
+}
+
+function drawTriangle(canvas, context) {
+
+	context.beginPath();
+	context.arc(300, 300, 200, 0, degreesToRadians(360), true);
+	context.fillStyle = "#ffffcc";
+	context.fill();
+	context.stroke();
+
+	context.beginPath();  // Left Eye
+	context.arc(200, 250, 25, 0, degreesToRadians(360), true);
+	context.stroke();
+
+	context.beginPath();  // Right Eye
+	context.arc(400, 250, 25, 0, degreesToRadians(360), true);
+	context.stroke();
+
+	context.beginPath(); // Nose
+	context.moveTo(300, 300);
+	context.lineTo(300, 350);
+	context.stroke();
+
+	context.beginPath(); // Mouth
+	context.arc(300, 350, 75, degreesToRadians(180), degreesToRadians(360), true);
+	context.stroke();
+}
+
+function degreesToRadians (degrees){
+    return (degrees * Math.PI)/180
+}
+</script>
+<style>
+body {
+}
+canvas { 
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+    <h1>Face Test</h1>
+<canvas width="600" height="600" id="myCanvas">
+	<p>This example requires a browser that supports the
+	<a href="http://www.w3.org/html/wg/html5/">HTML5</a> 
+	&lt;canvas&gt; feature.</p>
+</canvas>
+</body>
+</html>
