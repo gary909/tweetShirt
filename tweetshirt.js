@@ -34,6 +34,9 @@ function previewHandler(){
             context.font = "30px Arial";
             context.strokeText("Humorous Tweet No 23.", 150, 110);
     }
+
+    drawBird(canvas, context);
+
 }
 
 function fillBackgroundColor(canvas, context) {
@@ -66,6 +69,15 @@ function drawCircle(canvas, context){
 function degreesToRadians (degrees){
     return (degrees * Math.PI)/180
 }
+
+function drawBird(canvas, context) {
+    var twitterBird = new Image();
+    twitterBird.src = "twitterBird.png";
+    twitterBird.onload = function() {
+        context.drawImage(twitterBird, 20, 120, 70, 70);
+    };
+}
+
 
 
 
