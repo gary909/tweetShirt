@@ -1,6 +1,7 @@
 window.onload = function () {
     var button = document.getElementById("previewButton");
     button.onclick = previewHandler;
+    makeImage();
 };
 
 function previewHandler(){
@@ -78,6 +79,12 @@ function drawBird(canvas, context) {
     };
 }
 
+function makeImage() {
+    var canvas = document.getElementById("tshirtCanvas");
+    canvas.onclick = function () {
+        window.location = canvas.toDataURL("image/png")
+    }
+}
 
 
 
